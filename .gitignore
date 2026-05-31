@@ -20,6 +20,7 @@ build/
 out/
 coverage/
 .cache/
+.tmp/
 
 # OS and editor files
 .DS_Store
