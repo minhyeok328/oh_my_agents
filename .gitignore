@@ -22,6 +22,9 @@ coverage/
 .cache/
 .tmp/
 
+# App workspaces are managed as separate Git repositories
+/workspaces/
+
 # OS and editor files
 .DS_Store
 .idea/
