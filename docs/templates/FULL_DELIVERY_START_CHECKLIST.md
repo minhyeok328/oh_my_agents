@@ -64,7 +64,7 @@ Workspace status:
 - [ ] Default Workflow automatic delegation is not being used.
 - [ ] Orchestrator has selected the immediate local critical-path task.
 - [ ] Delegated subtasks are non-overlapping and can run in parallel.
-- [ ] Subagents will receive compact task cards instead of full planning packets.
+- [ ] Subagents will receive compact task cards with owned outcomes and checkpoint expectations instead of full planning packets.
 - [ ] Required rule files are selected by role.
 - [ ] Subagent launch and integration rules are selected: `docs/agent-rules/subagent-execution.md`.
 - [ ] Security checklist is loaded only if a security trigger applies.
@@ -123,6 +123,7 @@ Each Subtask must have exactly one primary implementation owner.
 
 - [ ] Each Subtask has one primary domain owner.
 - [ ] Owned files/folders are explicitly listed for each Subtask.
+- [ ] Owned outcome and checkpoint expectations are explicitly listed for each delegated Subtask.
 - [ ] Out-of-scope files/folders are explicitly listed for each Subtask.
 - [ ] Cross-domain changes are represented as contract updates plus separate owned Subtasks.
 - [ ] No Subtask requires two agents to edit the same file at the same time.
@@ -130,9 +131,9 @@ Each Subtask must have exactly one primary implementation owner.
 
 Ownership map:
 
-| Subtask | Primary Agent | Owned Files/Folders | Explicitly Out of Scope | Dependencies |
-| --- | --- | --- | --- | --- |
-|  |  |  |  |  |
+| Subtask | Primary Agent | Owned Outcome | Owned Files/Folders | Explicitly Out of Scope | Checkpoint Expectations | Dependencies |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |
 
 ## 7) Security Trigger Gate
 
@@ -188,7 +189,7 @@ Sync points:
 | Sync Point | Trigger | Participants | Required Evidence |
 | --- | --- | --- | --- |
 | Contract approval | Before implementation | Integration Coordinator, Review Agent, Security Review Agent if required | Approved contract notes |
-| Subagent return check | After each subagent returns | Orchestrator, relevant reviewer if needed | Status, changed files, verification, scope check |
+| Subagent return check | After each subagent returns | Orchestrator, relevant reviewer if needed | Status, changed files, verification, scope check, ownership/checkpoint check |
 | Midpoint sync | After first domain Subtask completes | Relevant domain agents, Integration Coordinator | Handover + verification status |
 | Integration review | Before final handover | Integration Coordinator, Review Agent, Security Review Agent if required | Integration review output |
 
