@@ -55,7 +55,7 @@ Execution steps:
 3. Fill "Parallel Start Minimum" sections.
 4. Request or perform Review Agent validation of the contracts.
 5. Confirm each Subtask has exactly one primary domain owner.
-6. Confirm active workspace, profile, allowed write scopes, forbidden paths, verification commands, and Git steward status.
+6. Confirm active workspace, profile, allowed write scopes, forbidden paths, owned outcomes, checkpoint expectations, verification commands, and Git steward status.
 7. Run sync checks using `docs/coordination/AGENT_SYNC_CHECKLIST.md`.
 8. Produce integration handover and final coordination notes.
 
@@ -426,7 +426,7 @@ Required context:
 
 Mission:
 - Decompose the approved Spec into domain-owned Subtasks that can be implemented independently after contracts are reviewed.
-- Include active workspace, profile, allowed write scope, forbidden paths, verification commands, and Git steward status in every workspace-scoped Subtask.
+- Include active workspace, profile, allowed write scope, forbidden paths, owned outcome, checkpoint expectations, verification commands, and Git steward status in every workspace-scoped Subtask.
 
 Allowed changes:
 - Task/Subtask documents under `docs/specs/`
@@ -441,7 +441,7 @@ Execution steps:
 1. Read the approved Spec and relevant contracts.
 2. Identify domain boundaries and dependencies.
 3. Split work into Subtasks with one primary owner each.
-4. Define acceptance criteria, owned files, out-of-scope files, and verification commands.
+4. Define acceptance criteria, owned outcome, checkpoint expectations, owned files, out-of-scope files, and verification commands.
 5. Mark unclear dependencies as `Needs Confirmation`.
 6. Prepare handoff-ready Subtask instructions.
 
