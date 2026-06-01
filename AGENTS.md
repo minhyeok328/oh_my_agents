@@ -141,6 +141,8 @@ Implementation agents must not perform Git work unless explicitly assigned Git S
 - Keep the user informed during long-running work.
 - If work continues for 4 minutes, provide a short status update with the active workflow mode, active role or Subtask when applicable, current action, and early findings.
 - If there is no meaningful progress for 5 minutes, stop and provide a handover summary instead of silently retrying.
+- For delegated or subagent work, use time guidance as a checkpoint mechanism, not a forced timeout. Keep the assigned scope owned by that agent while there is meaningful progress.
+- Re-scope, add context, or escalate delegated work when checkpoints show no meaningful progress, scope drift, unsafe behavior, or a repeated blocker.
 - If the same fix/re-review loop, test failure, or implementation deadlock repeats three consecutive times, stop and ask the user for guidance.
 
 ## Completion
