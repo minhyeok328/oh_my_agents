@@ -23,6 +23,8 @@ Use this checklist at every planned sync point when parallel work is active.
 ## 3) Ownership & Scope
 
 - [ ] Each subagent returned `Status: Completed`, `Blocked`, or `Needs Confirmation`
+- [ ] Each subagent task card declared an owned outcome and checkpoint expectations
+- [ ] Checkpoints were treated as continue/re-scope/escalate decisions, not forced timeouts
 - [ ] Orchestrator checked returned changed files against each task card
 - [ ] Backend changes are confined to backend-owned files
 - [ ] DB changes are confined to migration/schema-owned files
