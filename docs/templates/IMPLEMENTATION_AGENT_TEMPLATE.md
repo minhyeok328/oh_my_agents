@@ -18,6 +18,8 @@ Use this template when running a domain Implementation Agent Subtask.
 ## Ownership & Scope
 
 - Owned files/folders (explicit):
+- Owned outcome:
+- Checkpoint expectations:
 - Read-only context:
 - Explicitly out of scope:
 - Forbidden paths:
