@@ -124,6 +124,14 @@ Forbidden paths:
 - No backend/API contract is changed.
 - Relevant tests or manual checks are reported.
 
+## Ownership And Checkpoints
+
+- Owned outcome: login UI error copy and state handling are updated within the allowed frontend scope.
+- Checkpoint interval: report progress if the task runs long enough to need a status update.
+- Continue when: changes stay inside the allowed scope and progress is visible.
+- Re-scope or stop when: backend/API behavior must change, verification is blocked, or scope expands.
+- Escalation owner: main Codex orchestrator.
+
 ## Verification
 
 Run from `workspaces/my-app`.
@@ -220,6 +228,7 @@ Worker
 
 확인할 것:
 
+- task card의 owned outcome과 checkpoint 기준이 지켜졌는가
 - changed files가 task card의 allowed write scope 안에 있는가
 - `docs/**`, 다른 `workspaces/*`, `.git/**`, 실제 env/secret을 건드리지 않았는가
 - acceptance criteria를 만족하는가
@@ -232,6 +241,7 @@ Worker
 ```md
 Status: Integrated
 Scope check: passed
+Ownership/checkpoints: passed
 Verification: login tests and lint passed
 Review required: no separate Review Agent for this small delegated Default Workflow task
 Security review required: no auth/token/session behavior changed
@@ -264,7 +274,7 @@ Stop if:
 
 - subagent는 사용자가 명시적으로 요청했기 때문에 호출 가능합니다.
 - 사용자가 delegation을 명시했고, UI slice가 독립적입니다.
-- task card가 active workspace, write scope, forbidden paths, verification, stop condition을 모두 포함합니다.
+- task card가 active workspace, write scope, forbidden paths, ownership/checkpoints, verification, stop condition을 모두 포함합니다.
 - worker는 Git을 하지 않고, Git Steward로 handoff합니다.
 - orchestrator가 결과를 다시 검토하고 통합합니다.
 - worker 간 shared behavior 변경은 orchestrator/Integration Coordinator를 통해 contract나 task card로 기록합니다.
