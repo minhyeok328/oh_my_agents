@@ -216,10 +216,16 @@ docs/templates/SUBAGENT_TASK_CARD.template.md
 - 작업 목표
 - 완료 기준
 - 검증 명령
+- 맡은 결과와 체크포인트 기대치
 - 중단해야 하는 조건
 
 subagent는 스스로 작업 범위나 Git 동작, 검증 방식을 정하지 않습니다.
 메인 Codex 세션이 orchestrator 역할을 하며, 필요한 범위를 정리한 task card를 만들어 subagent에게 전달합니다.
+
+subagent에게 주는 작업은 작아야 하지만, 단순한 임시 도움으로 취급하지 않습니다.
+task card에 맡은 결과와 체크포인트 기대치를 적고, subagent는 `Completed`, `Blocked`, `Needs Confirmation` 중 하나로 책임 있게 보고해야 합니다.
+체크포인트는 강제 시간 제한이 아니라 계속 진행, 컨텍스트 보강, 범위 축소, escalation을 결정하는 시점입니다.
+의미 있는 진전이 있고 범위가 유지된다면 같은 subagent가 맡은 결과를 끝까지 책임지도록 둡니다.
 
 subagent를 호출하기 전에는 다음이 정해져 있어야 합니다.
 
@@ -228,6 +234,7 @@ subagent를 호출하기 전에는 다음이 정해져 있어야 합니다.
 - 수정 가능한 경로
 - 금지 경로
 - 검증 명령 또는 `Needs Confirmation`
+- 맡은 결과와 체크포인트 기대치
 - 중단 조건
 - Git 작업 여부
 - 메인 Codex가 동시에 진행할 non-overlapping local task
