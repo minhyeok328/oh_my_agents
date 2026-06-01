@@ -1,0 +1,37 @@
+# Workspaces
+
+`workspaces/` contains the real app repositories that Codex may work on.
+The `secret_agents` root stays as the operating shell for rules, templates, contracts, and coordination docs.
+
+Declare exactly one active workspace before app-scoped implementation:
+
+```text
+Active workspace: workspaces/<app-slug>
+```
+
+Each app workspace should provide a profile at:
+
+```text
+workspaces/<app-slug>/.agent/profile.md
+```
+
+Use `docs/templates/WORKSPACE_PROFILE.template.md` when creating that profile.
+The profile should define allowed write scopes, forbidden paths, verification commands, contract locations, and Git pointer metadata.
+
+## Workspace Rules
+
+- Do not read or modify another `workspaces/*` app unless the user explicitly approves it.
+- Do not read or commit real `.env`, `.env.local`, credentials, local databases, generated secrets, or `.git/**`.
+- Keep implementation changes inside the active workspace and assigned write scope.
+- Use a compact subagent task card when delegation is explicitly requested.
+- Subagent task cards should include an owned outcome and checkpoint expectations; checkpoints are not forced timeouts while meaningful progress is visible.
+- Implementation agents do not run Git commands.
+- Commit, branch, push, and PR work must be handled by a Git Steward using `commit-workflow`.
+
+## Setup Checklist
+
+1. Place or clone the app repository under `workspaces/<app-slug>/`.
+2. Create `workspaces/<app-slug>/.agent/profile.md`.
+3. Declare `Active workspace: workspaces/<app-slug>` in the task request.
+4. Confirm verification commands before implementation starts.
+5. Assign Git Steward work separately if a commit, branch, push, or PR is needed.
