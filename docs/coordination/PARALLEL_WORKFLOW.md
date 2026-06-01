@@ -72,9 +72,11 @@ The orchestrator prepares a bounded task card for each subagent before launch.
 ### Phase 3: Independent Implementation
 
 - Each domain agent implements one Subtask at a time.
+- Each domain agent owns the assigned Subtask outcome until it returns `Completed`, `Blocked`, or `Needs Confirmation`.
 - Each domain agent edits only inside the active workspace and assigned owned scope.
 - Domain implementation agents do not run Git commands or modify Git metadata.
 - Domain agents return the required status and output fields from `docs/agent-rules/subagent-execution.md`.
+- Checkpoints are used to decide whether to continue, add context, narrow scope, or escalate; they are not forced timeouts when meaningful progress is visible.
 - If a Subtask requires changing a shared interface:
   - stop implementation
   - update contract first
@@ -85,6 +87,7 @@ The orchestrator prepares a bounded task card for each subagent before launch.
 Integration Coordinator runs:
 
 - Subagent output scope check
+- Ownership and checkpoint status check
 - Contract compliance check
 - Integration review template
 - Required verification commands (project-defined; otherwise Needs Confirmation)
@@ -99,5 +102,6 @@ Stop and escalate to the user if:
 
 - Fix & re-review loops repeat 3 times without convergence
 - Verification step fails 3 consecutive times
+- Checkpoints repeatedly show no meaningful progress on the owned outcome
 - Scope becomes ambiguous or requires workspace boundary breach
 - A real secret appears at risk of being read/created/committed
