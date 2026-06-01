@@ -119,6 +119,7 @@ Every implementation subagent must receive:
 - assigned role
 - owned write scope
 - explicit out-of-scope paths
+- owned outcome and checkpoint expectations
 - verification commands
 - stop conditions
 
