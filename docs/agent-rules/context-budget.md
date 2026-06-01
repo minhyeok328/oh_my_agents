@@ -51,6 +51,7 @@ Minimum fields:
 - allowed write scope
 - read-only context
 - forbidden paths
+- owned outcome and checkpoint expectations
 - verification commands
 - stop conditions
 
