@@ -46,6 +46,14 @@ Follow `docs/agent-rules/subagent-execution.md` for launch gates, stop condition
 
 -
 
+## Ownership And Checkpoints
+
+- Owned outcome:
+- Checkpoint interval:
+- Continue when:
+- Re-scope or stop when:
+- Escalation owner:
+
 ## Verification
 
 Run from the active workspace unless stated otherwise.
