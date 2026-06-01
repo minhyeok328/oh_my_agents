@@ -76,6 +76,32 @@ Before launching a subagent, it must:
 The orchestrator remains responsible for final integration.
 Subagent output is evidence, not automatic approval.
 
+## Ownership And Checkpoints
+
+Subagent delegation should create small, owned work rather than temporary help.
+The task card must define the outcome the subagent owns and the checkpoint expectations for that work.
+
+Time guidance for subagents is a checkpoint mechanism, not a forced timeout.
+At each checkpoint, the orchestrator should decide whether to continue, provide missing context, narrow the scope, assign review, or stop and escalate.
+
+Continue the assigned work with the same subagent when:
+
+- the subagent is still inside the allowed scope
+- the output or status shows meaningful progress toward the owned outcome
+- the remaining work is still the same bounded task
+- verification or review is pending but the path is clear
+
+Re-scope, stop, or escalate when:
+
+- checkpoints show no meaningful progress
+- the subagent reports `Blocked` or `Needs Confirmation`
+- scope has drifted beyond the task card
+- the work requires a contract, security, workspace, or Git policy change that was not assigned
+- the same blocker, verification failure, or review loop repeats three consecutive times
+
+The orchestrator must not reclaim work just because a checkpoint occurs.
+If the subagent owns a clear scope and is making progress, let it carry that scope to completion.
+
 ## 2. When To Use A Subagent
 
 Use a subagent when:
@@ -144,6 +170,7 @@ Required fields:
 - mission
 - acceptance criteria
 - verification
+- ownership and checkpoint expectations
 - stop conditions
 - output required
 
