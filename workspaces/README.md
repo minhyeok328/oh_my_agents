@@ -1,7 +1,7 @@
 # Workspaces
 
 `workspaces/` contains the real app repositories that Codex may work on.
-The `secret_agents` root stays as the operating shell for rules, templates, contracts, and coordination docs.
+The `oh_my_agents` root stays as the operating shell for rules, templates, contracts, and coordination docs.
 
 Declare exactly one active workspace before app-scoped implementation:
 

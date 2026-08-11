@@ -1,6 +1,6 @@
-# secret_agents
+# oh_my_agents
 
-`secret_agents`는 Codex와 subagent가 사용자 Git 프로젝트를 안전하게 작업하도록 돕는 운영 셸입니다.
+`oh_my_agents`는 Codex와 subagent가 사용자 Git 프로젝트를 안전하게 작업하도록 돕는 운영 셸입니다.
 제품 앱 자체가 아니라, 앱을 넣고 작업 경계와 검증 흐름을 정하는 문서/규칙 중심의 workspace입니다.
 
 처음 사용하는 경우 먼저 [사용 설명서](./docs/onboarding/USER_GUIDE.ko.md)를 읽어 주세요.
@@ -18,7 +18,7 @@
 일반적인 구조는 다음과 같습니다.
 
 ```text
-secret_agents/                  # 운영 셸
+oh_my_agents/                   # 운영 셸
 +-- AGENTS.md                    # 항상 적용되는 운영 규칙
 +-- docs/                        # agent 규칙, 템플릿, 온보딩 문서
 +-- scripts/                     # 문서 검증 등 보조 스크립트
